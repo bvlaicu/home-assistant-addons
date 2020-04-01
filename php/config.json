@@ -1,9 +1,9 @@
 {
   "name": "PHP",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "slug": "php",
   "description": "PHP Server add-on for Home Assistant",
-  "url": "https://github.com/bvlaicu/addon-php",
+  "url": "https://github.com/bvlaicu/home-assistant-addons/tree/master/php",
   "startup": "application",
   "arch": ["aarch64", "amd64", "armhf", "armv7", "i386"],
   "webui": "[PROTO:ssl]://[HOST]:[PORT:80]",
