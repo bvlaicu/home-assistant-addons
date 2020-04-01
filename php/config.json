@@ -1,6 +1,6 @@
 {
   "name": "PHP",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "slug": "php",
   "description": "PHP Server add-on for Home Assistant",
   "url": "https://github.com/bvlaicu/addon-php",
