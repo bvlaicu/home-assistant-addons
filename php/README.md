@@ -144,7 +144,7 @@ SOFTWARE.
 [dockerhub]: https://hub.docker.com/r/hassioaddons/php
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
 [forum]: https://community.home-assistant.io/t/repository-community-hass-io-add-ons/24705?u=frenck
-[frenck]: https://github.com/frenck
+[bvlaicu]: https://github.com/bvlaicu
 [github-sponsors-shield]: https://frenck.dev/wp-content/uploads/2019/12/github_sponsor.png
 [github-sponsors]: https://github.com/sponsors/frenck
 [gitlabci-shield]: https://gitlab.com/bvlaicu/addon-php/badges/master/pipeline.svg
