@@ -1,6 +1,6 @@
 {
   "name": "Dashcast",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "slug": "dashcast",
   "description": "Display dashboard web pages on your Chromecast device",
   "url": "https://github.com/ragingcomputer/dashcast-docker-MQTT",
@@ -23,7 +23,7 @@
     "MQTT_USERNAME": "",
     "MQTT_PASSWORD": ""
   },
-  "image": "ragingcomputer/dashcast-docker-mqtt",
+  "image": "ragingcomputer/dashcast-docker-mqtt:latest",
   "options": {
     "log_level": "info",
     "DEFAULT_DASHBOARD_URL": null,
