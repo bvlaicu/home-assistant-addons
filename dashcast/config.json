@@ -15,17 +15,18 @@
   "boot": "auto",
   "host_network": true,
   "environment": {
-    "DEFAULT_DASHBOARD_URL": "",
+    "DEFAULT_DASHBOARD_URL": "http://192.168.1.9:8880/",
     "DEFAULT_DASHBOARD_URL_FORCE": "False",
-    "DISPLAY_NAME": "Dashcast Chromecast",
+    "DISPLAY_NAME": "Dash TV Chromecast",
     "IGNORE_CEC": "True",
-    "MQTT_SERVER": "",
-    "MQTT_USERNAME": "",
-    "MQTT_PASSWORD": ""
+    "MQTT_SERVER": "192.168.1.9",
+    "MQTT_USERNAME": "1883",
+    "MQTT_PASSWORD": "testpassword"
   },
   "image": "ragingcomputer/dashcast-docker-mqtt",
   "options": {
     "log_level": "info",
+    "DISPLAY_NAME": "Dash TV Chromecast",
     "DEFAULT_DASHBOARD_URL": null,
     "MQTT_SERVER": "127.0.0.1", 
     "MQTT_USERNAME": null,
@@ -33,6 +34,7 @@
   },
   "schema": {
     "log_level": "list(trace|debug|info|notice|warning|error|fatal)",
+    "DISPLAY_NAME": "str",
     "DEFAULT_DASHBOARD_URL": "str", 
     "MQTT_SERVER":"str",
     "MQTT_USERNAME":"str",
@@ -43,8 +45,7 @@
     "80/tcp": 8880
   },
   "ports_description": {
-    "80/tcp": "Web interface (Not required for Ingress)",
-    "8088/tcp": "PHP server"
+    "80/tcp": "Web interface (Not required for Ingress)"
   },
   "hassio_api": true,
   "auth_api": true,
