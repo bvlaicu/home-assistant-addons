@@ -1,0 +1,54 @@
+{
+  "name": "Dashcast",
+  "version": "0.0.1",
+  "slug": "dashcast",
+  "description": "Display dashboard web pages on your Chromecast device",
+  "url": "https://github.com/ragingcomputer/dashcast-docker-MQTT",
+  "startup": "application",
+  "arch": ["aarch64", "amd64", "armhf", "armv7", "i386"],
+  "webui": "[PROTO:ssl]://[HOST]:[PORT:80]",
+  "ingress": true,
+  "ingress_port": 1337,
+  "panel_icon": "mdi:chart-areaspline",
+  "homeassistant": "0.92.0b2",
+  "map": ["share:rw", "ssl"],
+  "boot": "auto",
+  "host_network": true,
+  "environment": {
+    "DEFAULT_DASHBOARD_URL": "",
+    "DEFAULT_DASHBOARD_URL_FORCE": "False",
+    "DISPLAY_NAME": "Dashcast Chromecast",
+    "IGNORE_CEC": "True",
+    "MQTT_SERVER": "",
+    "MQTT_USERNAME": "",
+    "MQTT_PASSWORD": ""
+  },
+  "image": "ragingcomputer/dashcast-docker-mqtt",
+  "options": {
+    "log_level": "info",
+    "DEFAULT_DASHBOARD_URL": null,
+    "MQTT_SERVER": "127.0.0.1", 
+    "MQTT_USERNAME": null,
+    "MQTT_PASSWORD": null
+  },
+  "schema": {
+    "log_level": "list(trace|debug|info|notice|warning|error|fatal)",
+    "DEFAULT_DASHBOARD_URL": "str", 
+    "MQTT_SERVER":"str",
+    "MQTT_USERNAME":"str",
+    "MQTT_PASSWORD":"str"
+  },
+  "ports": {
+    "80/tcp": null,
+    "80/tcp": 8880
+  },
+  "ports_description": {
+    "80/tcp": "Web interface (Not required for Ingress)",
+    "8088/tcp": "PHP server"
+  },
+  "hassio_api": true,
+  "auth_api": true,
+  "hassio_role": "default",
+  "homeassistant_api": false
+}
+
