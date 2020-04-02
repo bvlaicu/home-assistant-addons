@@ -1,28 +1,9 @@
-# Home Assistant Community Add-on: PHP
-
-[![GitHub Release][releases-shield]][releases]
-![Project Stage][project-stage-shield]
-[![License][license-shield]](LICENSE.md)
-
-![Supports armhf Architecture][armhf-shield]
-![Supports armv7 Architecture][armv7-shield]
-![Supports aarch64 Architecture][aarch64-shield]
-![Supports amd64 Architecture][amd64-shield]
-![Supports i386 Architecture][i386-shield]
-
-[![GitLab CI][gitlabci-shield]][gitlabci]
-![Project Maintenance][maintenance-shield]
-[![GitHub Activity][commits-shield]][commits]
-
-[![Discord][discord-shield]][discord]
-[![Community Forum][forum-shield]][forum]
-
-PHP add-on by Community Hass.io add-ons.
+# Home Assistant Add-on: PHP
 
 ## About
 
-This is a PHP add-on for Hass.io. When started, it provides a
-PHP server serving web conetnt from the /data persistent volume.
+This is a PHP add-on for Home Assistatnt. When started, it provides a
+PHP server serving web content from the /data persistent volume.
 
 ## Installation
 
@@ -103,9 +84,6 @@ Thank you for being involved! :heart_eyes:
 
 The original setup of this repository is by [Bogdan Vlaicu][bvlaicu].
 
-For a full list of all authors and contributors,
-check [the contributor's page][contributors].
-
 
 ## License
 
@@ -131,10 +109,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-[aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
-[amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
-[armhf-shield]: https://img.shields.io/badge/armhf-yes-green.svg
-[armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
 [commits-shield]: https://img.shields.io/github/commit-activity/y/bvlaicu/addon-php.svg
 [commits]: https://github.com/bvlaicu/addon-php/commits/master
 [contributors]: https://github.com/bvlaicu/addon-php/graphs/contributors
@@ -143,10 +117,7 @@ SOFTWARE.
 [discord]: https://discord.me/hassioaddons
 [dockerhub]: https://hub.docker.com/r/hassioaddons/php
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
-[forum]: https://community.home-assistant.io/t/repository-community-hass-io-add-ons/24705?u=frenck
 [bvlaicu]: https://github.com/bvlaicu
-[github-sponsors-shield]: https://frenck.dev/wp-content/uploads/2019/12/github_sponsor.png
-[github-sponsors]: https://github.com/sponsors/frenck
 [gitlabci-shield]: https://gitlab.com/bvlaicu/addon-php/badges/master/pipeline.svg
 [gitlabci]: https://gitlab.com/bvlaicu/addon-php/pipelines
 [i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
@@ -154,8 +125,6 @@ SOFTWARE.
 [keepchangelog]: http://keepachangelog.com/en/1.0.0/
 [license-shield]: https://img.shields.io/github/license/bvlaicu/addon-php.svg
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2020.svg
-[patreon-shield]: https://frenck.dev/wp-content/uploads/2019/12/patreon.png
-[patreon]: https://www.patreon.com/frenck
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
 [reddit]: https://reddit.com/r/homeassistant
 [releases-shield]: https://img.shields.io/github/release/bvlaicu/addon-php.svg
