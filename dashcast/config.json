@@ -15,22 +15,22 @@
   "boot": "auto",
   "host_network": true,
   "environment": {
-    "DEFAULT_DASHBOARD_URL": "http://192.168.1.9:8880/",
+    "DEFAULT_DASHBOARD_URL": "{dashboard_url}",
     "DEFAULT_DASHBOARD_URL_FORCE": "False",
     "DISPLAY_NAME": "Dash TV Chromecast",
     "IGNORE_CEC": "True",
     "MQTT_SERVER": "192.168.1.9",
-    "MQTT_USERNAME": "1883",
+    "MQTT_USERNAME": "mqtt",
     "MQTT_PASSWORD": "testpassword"
   },
   "image": "ragingcomputer/dashcast-docker-mqtt",
   "options": {
     "log_level": "info",
-    "DISPLAY_NAME": "Dash TV Chromecast",
-    "DEFAULT_DASHBOARD_URL": null,
-    "MQTT_SERVER": "127.0.0.1", 
-    "MQTT_USERNAME": null,
-    "MQTT_PASSWORD": null
+    "chromecast_name": "Livingroom Chromecast",
+    "dashboard_url": "https://yahoo.com",
+    "mqtt_host": "127.0.0.1", 
+    "mqtt_user": "mqtt",
+    "mqtt_pass": "yourpass"
   },
   "schema": {
     "log_level": "list(trace|debug|info|notice|warning|error|fatal)",
