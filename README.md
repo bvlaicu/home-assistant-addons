@@ -1,15 +1,5 @@
 # Home Assistant Add-ons
 
-![Project Stage][project-stage-shield]
-![Maintenance][maintenance-shield]
-[![License][license-shield]](LICENSE.md)
-
-[![GitLab CI][gitlabci-shield]][gitlabci]
-[![Awesome][awesome-shield]][awesome]
-
-[![Discord][discord-shield]][discord]
-[![Community Forum][forum-shield]][forum]
-
 ## About
 
 Home Assistant allows anyone to create add-on repositories to share their
@@ -23,20 +13,15 @@ In the Home Assistant add-on store, a possibility to add a repository is provide
 Use the following URL to add this repository:
 
 ```txt
-https://github.com/bvlaicu/home-assistant-addons-repository
+https://github.com/bvlaicu/home-assistant-addons
 ```
 
 ## Add-ons provided by this repository
 
-### &#10003; [PHP][addon-php]
+### [PHP][addon-php]
+### [Dashcast][addon-dashcast]
+### [Meter Reader][addon-meter-reader]
 
-![Latest Version][adb-version-shield]
-![Supports armhf Architecture][adb-armhf-shield]
-![Supports armv7 Architecture][adb-armv7-shield]
-![Supports aarch64 Architecture][adb-aarch64-shield]
-![Supports amd64 Architecture][adb-amd64-shield]
-![Supports i386 Architecture][adb-i386-shield]
-![Docker Pulls][adb-pulls-shield]
 
 ## Releases
 
@@ -88,3 +73,5 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 [addon-php]: https://github.com/bvlaicu/home-assistant-addons/php
+[addon-dashcast]: https://github.com/bvlaicu/home-assistant-addons/dashcast
+[addon-meter-reader]: https://github.com/bvlaicu/home-assistant-addons/meter-reader
