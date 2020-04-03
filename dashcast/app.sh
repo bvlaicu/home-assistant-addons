@@ -19,7 +19,8 @@ echo "MQTT_USERNAME=${MQTT_USERNAME}"
 export MQTT_USERNAME
 
 MQTT_PASSWORD=$(jq --raw-output '.mqtt_pass // empty' $CONFIG_PATH)
-echo "MQTT_PASSWORD=${MQTT_PASSWORD}"
+MQTT_PASSWORD_REDACTED=$(sed 's/^......./*******/' <<<$MQTT_PASSWORD)
+echo "MQTT_PASSWORD=${MQTT_PASSWORD_REDACTED}"
 export MQTT_PASSWORD
 
 # Keep the python app alive.
