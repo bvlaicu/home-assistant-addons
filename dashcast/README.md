@@ -5,6 +5,8 @@
 This is a Dashcast add-on for Home Assistant. 
 Dascast is an app that displays dashboard web pages on your Chromecast device.
 
+Credit to [ragingcomputer/dashcast-docker-MQTT](https://github.com/ragingcomputer/dashcast-docker-MQTT) for the docker code.
+
 ## Installation
 
 The installation of this add-on is pretty straightforward and not different in
