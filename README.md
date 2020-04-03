@@ -72,6 +72,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-[addon-php]: https://github.com/bvlaicu/home-assistant-addons/php
-[addon-dashcast]: https://github.com/bvlaicu/home-assistant-addons/dashcast
-[addon-meter-reader]: https://github.com/bvlaicu/home-assistant-addons/meter-reader
+[addon-php]: https://github.com/bvlaicu/home-assistant-addons/tree/master/php
+[addon-dashcast]: https://github.com/bvlaicu/home-assistant-addons/tree/master/dashcast
+[addon-meter-reader]: https://github.com/bvlaicu/home-assistant-addons/tree/master/meter-reader
