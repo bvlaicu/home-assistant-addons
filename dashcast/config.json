@@ -1,6 +1,6 @@
 {
   "name": "Dashcast",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "slug": "dashcast",
   "description": "Display dashboard web pages on your Chromecast device",
   "url": "https://github.com/ragingcomputer/dashcast-docker-MQTT",
@@ -15,21 +15,21 @@
   "boot": "auto",
   "host_network": true,
   "environment": {
-    "DEFAULT_DASHBOARD_URL": "{dashboard_url}",
+    "DISPLAY_NAME": "",
+    "DEFAULT_DASHBOARD_URL": "",
     "DEFAULT_DASHBOARD_URL_FORCE": "False",
-    "DISPLAY_NAME": "Office Chromecast",
     "IGNORE_CEC": "True",
-    "MQTT_SERVER": "192.168.1.9",
-    "MQTT_USERNAME": "mqtt",
-    "MQTT_PASSWORD": "testpassword"
+    "MQTT_SERVER": "",
+    "MQTT_USERNAME": "",
+    "MQTT_PASSWORD": ""
   },
   "options": {
     "log_level": "info",
     "chromecast_name": "Livingroom Chromecast",
-    "dashboard_url": "https://yahoo.com",
+    "dashboard_url": "https://news.google.com",
     "mqtt_host": "127.0.0.1", 
     "mqtt_user": "mqtt",
-    "mqtt_pass": "yourpass"
+    "mqtt_pass": "yourmqttpassword"
   },
   "schema": {
     "log_level": "list(trace|debug|info|notice|warning|error|fatal)",
