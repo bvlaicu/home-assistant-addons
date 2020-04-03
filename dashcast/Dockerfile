@@ -12,6 +12,18 @@ ADD . /app
 # Install any needed packages specified in requirements.txt
 RUN pip install -r requirements.txt
 
+RUN apt-get update && apt-get install -y curl wget nano
+
+RUN curl -J -L -o /tmp/bashio.tar.gz \
+        "https://github.com/hassio-addons/bashio/archive/v0.9.0.tar.gz" \
+    && mkdir /tmp/bashio \
+    && tar zxvf \
+        /tmp/bashio.tar.gz \
+        --strip 1 -C /tmp/bashio \
+    \
+    && mv /tmp/bashio/lib /usr/lib/bashio \
+    && ln -s /usr/lib/bashio/bashio /usr/bin/bashio
+
 # Define environment variables
 ENV DEFAULT_DASHBOARD_URL "https://darksky.net"
 ENV DEFAULT_DASHBOARD_URL_FORCE "False"
