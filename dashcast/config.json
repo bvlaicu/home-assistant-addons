@@ -1,6 +1,6 @@
 {
   "name": "Dashcast",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "slug": "dashcast",
   "description": "Display dashboard web pages on your Chromecast device",
   "url": "https://github.com/ragingcomputer/dashcast-docker-MQTT",
@@ -17,7 +17,7 @@
   "environment": {
     "DEFAULT_DASHBOARD_URL": "{dashboard_url}",
     "DEFAULT_DASHBOARD_URL_FORCE": "False",
-    "DISPLAY_NAME": "Dash TV Chromecast",
+    "DISPLAY_NAME": "Office Chromecast",
     "IGNORE_CEC": "True",
     "MQTT_SERVER": "192.168.1.9",
     "MQTT_USERNAME": "mqtt",
