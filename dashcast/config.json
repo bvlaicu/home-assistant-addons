@@ -34,11 +34,11 @@
   },
   "schema": {
     "log_level": "list(trace|debug|info|notice|warning|error|fatal)",
-    "DISPLAY_NAME": "str",
-    "DEFAULT_DASHBOARD_URL": "str", 
-    "MQTT_SERVER":"str",
-    "MQTT_USERNAME":"str",
-    "MQTT_PASSWORD":"str"
+    "chromecast_name": "str",
+    "dashboard_url": "str", 
+    "mqtt_host":"str",
+    "mqtt_user":"str",
+    "mqtt_pass":"str"
   },
   "ports": {
     "80/tcp": null,
