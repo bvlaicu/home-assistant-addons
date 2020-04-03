@@ -1,6 +1,6 @@
 {
   "name": "Dashcast",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "slug": "dashcast",
   "description": "Display dashboard web pages on your Chromecast device",
   "url": "https://github.com/ragingcomputer/dashcast-docker-MQTT",

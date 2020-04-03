@@ -12,7 +12,7 @@ ADD . /app
 # Install any needed packages specified in requirements.txt
 RUN pip install -r requirements.txt
 
-RUN apt-get update && apt-get install -y curl wget nano
+RUN apt-get update && apt-get install -y curl wget nano jq
 
 RUN curl -J -L -o /tmp/bashio.tar.gz \
         "https://github.com/hassio-addons/bashio/archive/v0.9.0.tar.gz" \
