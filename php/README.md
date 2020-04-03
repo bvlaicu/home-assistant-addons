@@ -2,7 +2,7 @@
 
 ## About
 
-This is a PHP add-on for Home Assistatnt. When started, it provides a
+This is a PHP add-on for Home Assistant. When started, it provides a
 PHP server serving web content from the /data persistent volume.
 
 ## Installation
