@@ -2,7 +2,7 @@ ARG BUILD_FROM=hassioaddons/base-amd64:1.2.0
 FROM ${BUILD_FROM}
 
 # Copy root filesystem
-#COPY rootfs /
+COPY rootfs /
 
 # Setup base
 RUN apk add --no-cache minidlna
