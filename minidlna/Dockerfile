@@ -3,6 +3,8 @@ FROM debian:wheezy
 #RUN apt-get update && apt-get upgrade && apt-get install -y minidlna
 ADD ./run.sh /run.sh
 
+RUN chmod a+x /run.sh
+
 ENTRYPOINT ["/run.sh"]
 
 # Labels
