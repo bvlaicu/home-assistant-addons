@@ -16,12 +16,12 @@ ARG BUILD_VERSION
 # Labels
 LABEL \
     io.hass.name="MiniDLNA" \
-    io.hass.description="RedyMedia MiniDLNA add-on for Home Assistant" \
+    io.hass.description="RedyMedia MiniDLNA daemon serves media files (music, pictures, and video) to clients on a network" \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
     io.hass.version=${BUILD_VERSION} \
     maintainer="Bogdan Vlaicu <bogdanvlaicu@yahoo.com>" \
-    org.label-schema.description="RedyMedia MiniDLNA add-on for Home Assistant" \
+    org.label-schema.description="RedyMedia MiniDLNA daemon serves media files (music, pictures, and video) to clients on a network" \
     org.label-schema.build-date=${BUILD_DATE} \
     org.label-schema.name="MiniDLNA" \
     org.label-schema.schema-version="1.0" \
