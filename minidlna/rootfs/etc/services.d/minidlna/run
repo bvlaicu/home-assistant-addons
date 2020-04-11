@@ -4,7 +4,7 @@
 # Runs the MiniDLNA daemon
 # ==============================================================================
 # shellcheck disable=SC1091
-source /usr/lib/hassio-addons/base.sh
+#source /usr/lib/hassio-addons/base.sh
 
 # Run the Tor daemon
 exec minidlnad
