@@ -1,0 +1,37 @@
+{
+  "name": "MiniDLNA",
+  "version": "0.0.1",
+  "slug": "minidlna",
+  "description": "MiniDLNA add-on for Home Assistant",
+  "url": "https://github.com/bvlaicu/home-assistant-addons/tree/master/minidlna",
+  "startup": "application",
+  "arch": ["aarch64", "amd64", "armhf", "armv7", "i386"],
+  "webui": "[PROTO:ssl]://[HOST]:[PORT:80]",
+  "ingress": true,
+  "ingress_port": 1337,
+  "panel_icon": "mdi:chart-areaspline",
+  "startup": "services",
+  "homeassistant": "0.92.0b2",
+  "arch": ["aarch64", "amd64", "armv7", "i386"],
+  "map": ["share:rw", "ssl"],
+  "boot": "auto",
+  "ports": {
+    "80/tcp": null,
+    "80/tcp": 8880
+  },
+  "ports_description": {
+    "80/tcp": "Web interface (Not required for Ingress)",
+    "8088/tcp": "MiniDLNA"
+  },
+  "hassio_api": true,
+  "auth_api": true,
+  "hassio_role": "default",
+  "homeassistant_api": false,
+  "options": {
+    "log_level": "info"
+  },
+  "schema": {
+    "log_level": "list(trace|debug|info|notice|warning|error|fatal)"
+  }
+}
+

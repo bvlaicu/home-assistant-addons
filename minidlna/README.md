@@ -1,24 +1,22 @@
-# Home Assistant Add-on: Dashcast
+# Home Assistant Add-on: MiniDLNA
 
 ## About
 
-This is a Dashcast add-on for Home Assistant. 
-Dascast is an app that displays dashboard web pages on your Chromecast device.
-
-Credit to [ragingcomputer/dashcast-docker-MQTT](https://github.com/ragingcomputer/dashcast-docker-MQTT) for the docker/mqtt implementation.
+This is a MiniDLNA add-on for Home Assistant. When started, it provides a
+MiniDLNA server serving web content from the /data persistent volume.
 
 ## Installation
 
 The installation of this add-on is pretty straightforward and not different in
 comparison to installing any other Home Assistant add-on.
 
-1. Search for the "Dashcast" add-on in the Supervisor add-on store and install it.
-1. Start the "Dashcast" add-on.
-1. Check the logs of the "Dashcast" add-on to see it in action.
+1. Search for the "MiniDLNA" add-on in the Supervisor add-on store and install it.
+1. Start the "MiniDLNA" add-on.
+1. Check the logs of the "MiniDLNA" add-on to see it in action.
 
 ## Configuration
 
-Dashcast add-on configuration:
+MiniDLNA add-on configuration:
 
 ```yaml
 log_level: info
@@ -111,5 +109,25 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+[commits-shield]: https://img.shields.io/github/commit-activity/y/bvlaicu/addon-minidlna.svg
+[commits]: https://github.com/bvlaicu/home-assistant-addons/commits/master
+[contributors]: https://github.com/bvlaicu/home-assistant-addons/graphs/contributors
+[discord-ha]: https://discord.gg/c5DvZ4e
+[discord-shield]: https://img.shields.io/discord/478094546522079232.svg
+[discord]: https://discord.me/hassioaddons
+[dockerhub]: https://hub.docker.com/r/hassioaddons/minidlna
+[forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
 [bvlaicu]: https://github.com/bvlaicu
+[gitlabci-shield]: https://gitlab.com/bvlaicu/addon-minidlna/badges/master/pipeline.svg
+[gitlabci]: https://gitlab.com/bvlaicu/addon-minidlna/pipelines
+[i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
 [issue]: https://github.com/bvlaicu/home-assistant-addons/issues
+[keepchangelog]: http://keepachangelog.com/en/1.0.0/
+[license-shield]: https://img.shields.io/github/license/bvlaicu/addon-minidlna.svg
+[maintenance-shield]: https://img.shields.io/maintenance/yes/2020.svg
+[project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
+[reddit]: https://reddit.com/r/homeassistant
+[releases-shield]: https://img.shields.io/github/release/bvlaicu/addon-minidlna.svg
+[releases]: https://github.com/bvlaicu/home-assistant-addons/releases
+[repository]: https://github.com/hassio-addons/repository
+[semver]: http://semver.org/spec/v2.0.0.html
