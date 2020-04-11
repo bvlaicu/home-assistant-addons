@@ -6,7 +6,7 @@
 # shellcheck disable=SC1091
 #source /usr/lib/hassio-addons/base.sh
 
-#if ! hass.directory_exists '/share/hdd'; then
-#    mkdir -p /share/hdd || hass.die 'Could not create hdd mount directory'
-#    chmod -R 0777 /share/hdd
-#fi
+if ! hass.directory_exists '/share/hdd'; then
+    mkdir -p /share/hdd || hass.die 'Could not create hdd mount directory'
+    chmod -R 0777 /share/hdd
+fi
