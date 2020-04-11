@@ -1,17 +1,9 @@
-ARG BUILD_FROM=hassioaddons/base-amd64:1.2.0
-FROM ${BUILD_FROM}
+FROM debian:wheezy
 
-# Copy root filesystem
-COPY rootfs /
+RUN apt-get update && apt-get upgrade && apt-get install -y minidlna
+ADD ./run.sh /run.sh
 
-# Setup base
-RUN apk add --no-cache minidlna
-
-# Build arugments
-ARG BUILD_ARCH
-ARG BUILD_DATE
-ARG BUILD_REF
-ARG BUILD_VERSION
+ENTRYPOINT ["/run.sh"]
 
 # Labels
 LABEL \
