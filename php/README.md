@@ -109,25 +109,17 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-[commits-shield]: https://img.shields.io/github/commit-activity/y/bvlaicu/addon-php.svg
 [commits]: https://github.com/bvlaicu/home-assistant-addons/commits/master
-[contributors]: https://github.com/bvlaicu/home-assistant-addons/graphs/contributors
 [discord-ha]: https://discord.gg/c5DvZ4e
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons
-[dockerhub]: https://hub.docker.com/r/hassioaddons/php
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
 [bvlaicu]: https://github.com/bvlaicu
-[gitlabci-shield]: https://gitlab.com/bvlaicu/addon-php/badges/master/pipeline.svg
-[gitlabci]: https://gitlab.com/bvlaicu/addon-php/pipelines
-[i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
 [issue]: https://github.com/bvlaicu/home-assistant-addons/issues
 [keepchangelog]: http://keepachangelog.com/en/1.0.0/
-[license-shield]: https://img.shields.io/github/license/bvlaicu/addon-php.svg
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2020.svg
-[project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
 [reddit]: https://reddit.com/r/homeassistant
 [releases-shield]: https://img.shields.io/github/release/bvlaicu/addon-php.svg
 [releases]: https://github.com/bvlaicu/home-assistant-addons/releases
-[repository]: https://github.com/hassio-addons/repository
+[repository]: https://github.com/home-assistant-addons/repository
 [semver]: http://semver.org/spec/v2.0.0.html

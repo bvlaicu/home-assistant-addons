@@ -2,7 +2,7 @@
 
 Put a webcam in front of your utility meter and AWS Rekognition sends the reading over MQTT to a MQTT server of your choice.
 
-note: if you restart the addon you will need to update the baseline value.
+Credit to [jhhbe/hassio-addons](https://github.com/jhhbe/hassio-addons) for the initial implementation.
 
 
 ## Config
@@ -26,3 +26,5 @@ aws_access_key_id, aws_secret_access_key, region: see link on how to set up an A
 mqtt_host, mqtt_port, mqtt_user, mqtt_pwd: find and get access to your MQTT server
 
 mqtt_topic: topic on which meter reading gets published
+
+#### Note: if you restart the addon you will need to update the baseline value.

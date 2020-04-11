@@ -22,6 +22,11 @@ Dashcast add-on configuration:
 
 ```yaml
 log_level: info
+chromecast_name: "Livingroom Chromecast",
+dashboard_url: "https://news.google.com",
+mqtt_host: "127.0.0.1", 
+mqtt_user: "mqtt",
+mqtt_pass: "yourmqttpassword"
 ```
 
 ### Option: `log_level`
@@ -41,6 +46,26 @@ Please note that each level automatically includes log messages from a
 more severe level, e.g., `debug` also shows `info` messages. By default,
 the `log_level` is set to `info`, which is the recommended setting unless
 you are troubleshooting.
+
+### Option: `chromecast_name`
+
+The name of the Chromecast device to control
+
+### Option: `dashboard_url`
+
+The URL to be shown on the Chromecast after starting this container
+
+### Option: `mqtt_host`
+
+The host or IP address of MQTT server
+
+### Option: `mqtt_user`
+
+The username for the MQTT server
+
+### Option: `mqtt_pass`
+
+The password for the MQTT server
 
 
 ## Changelog & Releases
