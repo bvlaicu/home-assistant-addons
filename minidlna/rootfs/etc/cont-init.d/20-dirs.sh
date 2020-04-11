@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bash
 # ==============================================================================
-# Community Hass.io Add-ons: torrdlna
+# Community Hass.io Add-ons: minidlna
 # Ensures necessary directories exists
 # ==============================================================================
 # shellcheck disable=SC1091
