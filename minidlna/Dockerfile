@@ -1,6 +1,7 @@
 FROM debian:stretch
 
-RUN apt-get update && apt-get upgrade && apt-get install -y minidlna net-tools
+RUN apt-get update && apt-get upgrade && apt-get install -y minidlna net-tools nano
+ADD ./minidlna.conf /etc/minidlna.conf
 ADD ./run.sh /run.sh
 
 RUN chmod a+x /run.sh
