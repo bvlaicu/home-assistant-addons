@@ -12,4 +12,6 @@ for VAR in `env`; do
     fi
 done
 
+tail -f /dev/null
+
 #exec /usr/bin/minidlna -d $@
