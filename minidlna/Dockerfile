@@ -5,9 +5,9 @@ ADD ./run.sh /run.sh
 
 RUN chmod a+x /run.sh
 
-#ENTRYPOINT ["/run.sh"]
+ENTRYPOINT ["/run.sh"]
 	
-CMD tail -f /dev/null
+#CMD tail -f /dev/null
 
 # Labels
 LABEL \
