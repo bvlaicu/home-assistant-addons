@@ -12,6 +12,8 @@ for VAR in `env`; do
     fi
 done
 
+service minidlna force-reload
+
 tail -f /dev/null
 
 #exec /usr/bin/minidlna -d $@
