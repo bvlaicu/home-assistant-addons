@@ -2,6 +2,12 @@
 
 set -e
 
+CONFIG_PATH=/data/options.json
+
+ENVVARS="$(jq --raw-output '.envvars' $CONFIG_PATH)"
+
+echo "ENVVARS=${ENVVARS}"
+
 > /etc/minidlna.conf2
 
 for VAR in `env`; do
