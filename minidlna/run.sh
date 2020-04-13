@@ -12,7 +12,7 @@ set -e
 #    fi
 #done
 
-service minidlna force-reload
+#service minidlna force-reload
 
 tail -f /dev/null
 
