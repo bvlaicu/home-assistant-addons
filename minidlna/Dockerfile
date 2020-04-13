@@ -1,14 +1,14 @@
 FROM debian:buster
 
-RUN apt-get update && apt-get upgrade -y --force-yes -qq && apt-get install -y minidlna net-tools nano
+RUN apt-get update && apt-get upgrade -y --force-yes -qq && apt-get install -y minidlna nano
 ADD ./minidlna.conf /etc/minidlna.conf
 
-#RUN service minidlna force-reload
-#RUN tail -f /dev/null
+RUN service minidlna force-reload
+ENTRYPOINT exec tail -f /dev/null
 
-ADD ./run.sh /run.sh
-RUN chmod a+x /run.sh
-ENTRYPOINT ["/run.sh"]
+#ADD ./run.sh /run.sh
+#RUN chmod a+x /run.sh
+#ENTRYPOINT ["/run.sh"]
 
 # Labels
 LABEL \
