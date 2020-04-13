@@ -1,4 +1,4 @@
-FROM debian:buster
+FROM raspbian/stretch
 
 RUN apt-get update && apt-get upgrade && apt-get install -y minidlna net-tools nano
 ADD ./minidlna.conf /etc/minidlna.conf
