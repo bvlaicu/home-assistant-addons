@@ -4,11 +4,11 @@ FROM raspbian/stretch
 ADD ./minidlna.conf /etc/minidlna.conf
 
 #RUN service minidlna force-reload
-#RUN tail -f /dev/null
+RUN tail -f /dev/null
 
-ADD ./run.sh /run.sh
-RUN chmod a+x /run.sh
-ENTRYPOINT ["/run.sh"]
+#ADD ./run.sh /run.sh
+#RUN chmod a+x /run.sh
+#ENTRYPOINT ["/run.sh"]
 
 # Labels
 LABEL \
