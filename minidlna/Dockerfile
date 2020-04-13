@@ -3,8 +3,7 @@ FROM debian:buster
 RUN apt-get update && apt-get upgrade -y --force-yes -qq && apt-get install -y minidlna procps nano
 ADD ./minidlna.conf /etc/minidlna.conf
 
-CMD service minidlna force-reload
-ENTRYPOINT exec tail -f /dev/null
+ENTRYPOINT service minidlna force-reload && exec tail -f /dev/null
 
 #ADD ./run.sh /run.sh
 #RUN chmod a+x /run.sh
