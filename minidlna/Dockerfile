@@ -1,6 +1,6 @@
-FROM debian:buster
+FROM debian:
 
-#RUN apt-get update && apt-get upgrade && apt-get install -y minidlna net-tools nano
+RUN apt-get update && apt-get upgrade && apt-get install -y minidlna net-tools nano
 ADD ./minidlna.conf /etc/minidlna.conf
 
 #RUN service minidlna force-reload
