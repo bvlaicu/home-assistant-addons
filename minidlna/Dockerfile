@@ -3,11 +3,11 @@ FROM debian:buster
 RUN apt-get update && apt-get upgrade -y --force-yes -qq && apt-get install -y minidlna procps nano
 ADD ./minidlna.conf /etc/minidlna.conf
 
-ENTRYPOINT service minidlna force-reload && exec tail -f /dev/null
+ADD ./run.sh /run.sh
+RUN chmod a+x /run.sh
+ENTRYPOINT ["/run.sh"]
 
-#ADD ./run.sh /run.sh
-#RUN chmod a+x /run.sh
-#ENTRYPOINT ["/run.sh"]
+#ENTRYPOINT service minidlna force-reload && exec tail -f /dev/null
 
 # Labels
 LABEL \
