@@ -1,6 +1,6 @@
 FROM debian:buster
 
-RUN apt-get update && apt-get upgrade -y --force-yes -qq && apt-get install -y minidlna nano
+RUN apt-get update && apt-get upgrade -y --force-yes -qq && apt-get install -y minidlna procps nano
 ADD ./minidlna.conf /etc/minidlna.conf
 
 RUN service minidlna force-reload
