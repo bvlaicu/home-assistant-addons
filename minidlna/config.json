@@ -1,6 +1,6 @@
 {
   "name": "MiniDLNA",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "slug": "minidlna",
   "description": "RedyMedia MiniDLNA daemon serves media files (music, pictures, and video) to clients on a network",
   "url": "https://github.com/bvlaicu/home-assistant-addons/tree/master/minidlna",
