@@ -3,8 +3,6 @@ FROM debian:buster
 RUN apt-get update && apt-get upgrade -y --force-yes -qq && apt-get install -y minidlna procps nano jq
 ADD ./minidlna.conf /etc/minidlna.conf
 
-RUN chown minidlna:minidlna /data 
-
 ADD ./run.sh /run.sh
 RUN chmod a+x /run.sh
 ENTRYPOINT ["/run.sh"]

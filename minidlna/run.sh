@@ -2,6 +2,8 @@
 
 set -e
 
+chown minidlna:minidlna /data
+
 CONFIG_PATH=/data/options.json
 
 ENVVARS="$(jq --raw-output '.envvars | .[] | .name + "=" + .value' $CONFIG_PATH)"
