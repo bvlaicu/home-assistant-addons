@@ -3,9 +3,13 @@
   "version": "0.0.1",
   "slug": "rtlamr",
   "description": "RF to MQTT Bridge based on RTL_SDR/RTL_433 for RTL2832U based DVB-T USB tuners",
-  "startup": "before",
+  "url": "https://github.com/bvlaicu/home-assistant-addons/tree/master/rtlamr",
+  "startup": "application",
+  "panel_icon": "mdi:chart-areaspline",
+  "startup": "services",
+  "homeassistant": "0.92.0b2",
   "boot": "auto",
-  "map": ["config:rw", "ssl"],
+  "map": ["share:rw", "ssl"],
   "devices": ["/dev/bus/usb:/dev/bus/usb:rwm"],
   "host_network": "False",
   "arch": [
@@ -14,6 +18,10 @@
     "armv7",
     "i386"
   ],
+  "hassio_api": true,
+  "auth_api": true,
+  "hassio_role": "default",
+  "homeassistant_api": false,
   "options":
   {
     "mqtt_host": "hassio.local",
