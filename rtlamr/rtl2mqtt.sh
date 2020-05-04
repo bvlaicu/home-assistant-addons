@@ -3,6 +3,10 @@
 export LANG=C
 PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin"
 
+echo "/usr/local/lib64/" > /etc/ld.so.conf
+export LD_LIBRARY_PATH=/usr/local/lib64/
+touch /var/log/rtl_433.log
+
 CONFIG_PATH=/data/options.json
 MQTT_HOST="$(jq --raw-output '.mqtt_host' $CONFIG_PATH)"
 MQTT_USER="$(jq --raw-output '.mqtt_user' $CONFIG_PATH)"
@@ -30,18 +34,22 @@ LASTVAL="0"
 
 # set a time to listen for. Set to 0 for unliminted
 
+#tail -f /dev/null
+
 # Do this loop, so will restart if buffer runs out
 while true; do 
 
 /go/bin/rtlamr -format json -msgtype=$MQTT_MSGTYPE -filterid=$MQTT_IDS | while read line
+#/go/bin/rtlamr -format json -msgtype=$MQTT_MSGTYPE | while read line
 
 do
   VAL="$(echo $line | jq --raw-output '.Message.Consumption' | tr -s ' ' '_')" # replace ' ' with '_'
   DEVICEID="$(echo $line | jq --raw-output '.Message.ID' | tr -s ' ' '_')"
-  MQTT_PATH="rtlamr/$DEVICEID/meter_reading"
+  MSGTYPE="$(echo $line | jq --raw-output '.Type' | tr -s ' ' '_')"
+  MQTT_PATH="readings/$DEVICEID/meter_reading"a
 
-  # Create file with touch /tmp/rtl_433.log if logging is needed
-  [ -w /tmp/rtl_433.log ] && echo $line >> rtl_433.log
+  # Create file with touch /var/log/rtl_433.log if logging is needed
+  [ -w /var/log/rtl_433.log ] && echo $line >> /var/log/rtl_433.log
   if [ "$VAL" != "$LASTVAL" ]; then
     echo $VAL | /usr/bin/mosquitto_pub -h $MQTT_HOST -u $MQTT_USER -P $MQTT_PASS -i RTL_433 -r -l -t $MQTT_PATH
 	LASTVAL=$VAL
