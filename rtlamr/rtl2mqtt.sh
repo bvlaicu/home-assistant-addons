@@ -39,24 +39,30 @@ LASTVAL="0"
 # Do this loop, so will restart if buffer runs out
 while true; do 
 
-/go/bin/rtlamr -format json -msgtype=$MQTT_MSGTYPE -filterid=$MQTT_IDS | while read line
-#/go/bin/rtlamr -format json -msgtype=$MQTT_MSGTYPE | while read line
-
-do
-  VAL="$(echo $line | jq --raw-output '.Message.Consumption' | tr -s ' ' '_')" # replace ' ' with '_'
-  DEVICEID="$(echo $line | jq --raw-output '.Message.ID' | tr -s ' ' '_')"
-  MSGTYPE="$(echo $line | jq --raw-output '.Type' | tr -s ' ' '_')"
-  MQTT_PATH="readings/$DEVICEID/meter_reading"a
-
-  # Create file with touch /var/log/rtl_433.log if logging is needed
-  [ -w /var/log/rtl_433.log ] && echo $line >> /var/log/rtl_433.log
-  if [ "$VAL" != "$LASTVAL" ]; then
-    echo $VAL | /usr/bin/mosquitto_pub -h $MQTT_HOST -u $MQTT_USER -P $MQTT_PASS -i RTL_433 -r -l -t $MQTT_PATH
-	LASTVAL=$VAL
+  ID_FILTER_OPTION=""
+  if [ -z ${MQTT_IDS+x} ]; then 
+    ID_FILTER_OPTION=""
+  else 
+    ID_FILTER_OPTION=$MQTT_IDS
   fi
-  
-done
 
-sleep 60
+  /go/bin/rtlamr -format json -msgtype=$MQTT_MSGTYPE $ID_FILTER_OPTION | while read line
+
+  do
+    VAL="$(echo $line | jq --raw-output '.Message.Consumption' | tr -s ' ' '_')" # replace ' ' with '_'
+    DEVICEID="$(echo $line | jq --raw-output '.Message.ID' | tr -s ' ' '_')"
+    MSGTYPE="$(echo $line | jq --raw-output '.Type' | tr -s ' ' '_')"
+    MQTT_PATH="rtlamr/$DEVICEID/meter_reading"
+
+    # Create file with touch /var/log/rtl_433.log if logging is needed
+    [ -w /var/log/rtl_433.log ] && echo $line >> /var/log/rtl_433.log
+    if [ "$VAL" != "$LASTVAL" ]; then
+      echo $VAL | /usr/bin/mosquitto_pub -h $MQTT_HOST -u $MQTT_USER -P $MQTT_PASS -i RTL_433 -r -l -t $MQTT_PATH
+    LASTVAL=$VAL
+    fi
+    
+  done
+
+  sleep 60
 
 done
