@@ -19,8 +19,8 @@ MQTT_IDS="$(jq --raw-output '.ids' $CONFIG_PATH)"
 echo "Starting RTLAMR with parameters:"
 echo "MQTT Host =" $MQTT_HOST
 echo "MQTT User =" $MQTT_USER
-MQTT_PASS_REDACTED=$(sed 's/^......./*******/' <<<$MQTT_PASS)
-echo "MQTT Password =" $MQTT_PASS_REDACTED
+#MQTT_PASS_REDACTED=$(sed 's/^......./*******/' <<<$MQTT_PASS)
+#echo "MQTT Password =" $MQTT_PASS_REDACTED
 echo "MQTT Message Type =" $MQTT_MSGTYPE
 echo "MQTT Device IDs =" $MQTT_IDS
 
