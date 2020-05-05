@@ -40,11 +40,10 @@ LASTVAL="0"
 # Do this loop, so will restart if buffer runs out
 while true; do 
 
-  ID_FILTER_OPTION=""
   if [ -z ${MQTT_IDS+x} ]; then 
-    ID_FILTER_OPTION=""
-  else 
     ID_FILTER_OPTION=$MQTT_IDS
+  else 
+    ID_FILTER_OPTION=""
   fi
 
   /go/bin/rtlamr -format json -msgtype=$MQTT_MSGTYPE $ID_FILTER_OPTION | while read line

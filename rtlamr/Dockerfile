@@ -49,6 +49,6 @@ ENV MQTT_USER="guest"
 ENV MQTT_PASS="guest"
 ENV MQTT_TOPIC="homeassistant/sensor/rtl433"
 
-ADD ./rtl2mqtt.sh /rtl2mqtt.sh
+ADD ./run.sh /run.sh
 
-CMD cd / && chmod +x /rtl2mqtt.sh && /rtl2mqtt.sh
+CMD cd / && chmod +x /run.sh && /run.sh
