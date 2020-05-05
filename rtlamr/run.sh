@@ -41,9 +41,9 @@ LASTVAL="0"
 while true; do 
 
   if [ -z ${MQTT_IDS+x} ]; then 
-    ID_FILTER_OPTION=-filterid=$MQTT_IDS
-  else 
     ID_FILTER_OPTION=""
+  else 
+    ID_FILTER_OPTION="-filterid=$MQTT_IDS"
   fi
 
   /go/bin/rtlamr -format json -msgtype=$MQTT_MSGTYPE $ID_FILTER_OPTION | while read line
