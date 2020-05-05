@@ -41,7 +41,7 @@ LASTVAL="0"
 while true; do 
 
   if [ -z ${MQTT_IDS+x} ]; then 
-    ID_FILTER_OPTION=$MQTT_IDS
+    ID_FILTER_OPTION=-filterid=$MQTT_IDS
   else 
     ID_FILTER_OPTION=""
   fi
