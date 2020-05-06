@@ -1,6 +1,6 @@
 {
     "name": "Meter Reader",
-    "version": "0.1.15",
+    "version": "0.1.16",
     "slug": "meterreader",
 	"homeassistant_api": "no",
     "description": "Put a webcam in front of your utility meter and let AWS Rekognition push the reading over mqtt",
