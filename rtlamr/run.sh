@@ -5,14 +5,14 @@ PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin"
 
 echo "/usr/local/lib64/" > /etc/ld.so.conf
 export LD_LIBRARY_PATH=/usr/local/lib64/
-touch /var/log/rtl_433.log
+# touch /var/log/rtl_433.log
 
 CONFIG_PATH=/data/options.json
 MQTT_HOST="$(jq --raw-output '.mqtt_host' $CONFIG_PATH)"
 MQTT_USER="$(jq --raw-output '.mqtt_user' $CONFIG_PATH)"
 MQTT_PASS="$(jq --raw-output '.mqtt_password' $CONFIG_PATH)"
-MQTT_MSGTYPE="$(jq --raw-output '.msgType' $CONFIG_PATH)"
-MQTT_IDS="$(jq --raw-output '.ids' $CONFIG_PATH)"
+MQTT_MSGTYPE="$(jq --raw-output '.msg_type' $CONFIG_PATH)"
+MQTT_IDS="$(jq --raw-output '.meter_ids' $CONFIG_PATH)"
 
 
 # Start the listener and enter an endless loop
@@ -50,9 +50,9 @@ while true; do
 
   do
     VAL="$(echo $line | jq --raw-output '.Message.Consumption' | tr -s ' ' '_')" # replace ' ' with '_'
-    DEVICEID="$(echo $line | jq --raw-output '.Message.ID' | tr -s ' ' '_')"
+    METERID="$(echo $line | jq --raw-output '.Message.ID' | tr -s ' ' '_')"
     MSGTYPE="$(echo $line | jq --raw-output '.Type' | tr -s ' ' '_')"
-    MQTT_PATH="rtlamr/$DEVICEID/meter_reading"
+    MQTT_PATH="rtlamr/$METERID/reading"
 
     # Create file with touch /var/log/rtl_433.log if logging is needed
     [ -w /var/log/rtl_433.log ] && echo $line >> /var/log/rtl_433.log
