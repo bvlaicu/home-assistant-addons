@@ -1,6 +1,6 @@
 {
   "name": "RTLAMR to MQTT Bridge",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "slug": "rtlamr",
   "description": "RF to MQTT Bridge based on RTL_SDR/RTL_433 for RTL2832U based DVB-T USB tuners",
   "url": "https://github.com/bvlaicu/home-assistant-addons/tree/master/rtlamr",
@@ -27,7 +27,7 @@
     "mqtt_user": "",
     "mqtt_password": "",
     "msgType": "all",
-    "ids": "12345001,1235002,12345003"
+    "ids": ""
   },
   "schema":
   {
