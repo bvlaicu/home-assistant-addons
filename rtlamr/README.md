@@ -1,5 +1,5 @@
 # RTLAMR to MQTT Bridge hass.io addon
-A hass.io addon for a software defined radio tuned to listen for 433MHz RF transmissions and republish the data via MQTT
+Add-on for software defined radio tuned to listen for 433MHz RF transmissions and republish the data via MQTT
 
 This addon is based on the addon from jdeath here: https://github.com/jdeath/RTLAMR2MQQT
 which is based on biochemguy's (non-docker) setup: https://community.home-assistant.io/t/get-your-smart-electric-water-and-gas-meter-scm-readings-into-home-assistant-with-a-rtl-sdr
@@ -19,7 +19,7 @@ msg_type: all
 meter_ids: '1487813232,15527764'
 ```
 
-### Option: `mqtt_user`
+### Option: `mqtt_host`
 
 The `mqtt_host` option defines the hostname or ip of the MQTT server
 
@@ -45,7 +45,7 @@ Optional. If not provided, all found meters will be processed
 
 ## MQTT Data
 
-Topic: rtlamr/<METER_ID>/meter_reading
+Topic: rtlamr/<METER_ID>/reading
 
 ## Hardware
 
