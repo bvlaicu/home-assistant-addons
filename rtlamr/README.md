@@ -41,7 +41,7 @@ Default value: all
 
 The `meter_ids` option defines the comma-separated list of meter ids to be processed
 
-Optional. If not provided, all found meters will be processed
+If missing or empty, all found meters will be processed
 
 ## MQTT Data
 
