@@ -21,8 +21,8 @@ echo "MQTT Host =" $MQTT_HOST
 echo "MQTT User =" $MQTT_USER
 #MQTT_PASS_REDACTED=$(sed 's/^......./*******/' <<<$MQTT_PASS)
 #echo "MQTT Password =" $MQTT_PASS_REDACTED
-echo "MQTT Message Type =" $MQTT_MSGTYPE
-echo "MQTT Device IDs =" $MQTT_IDS
+echo "Message Type =" $MQTT_MSGTYPE
+echo "Meter IDs =" $MQTT_IDS
 
 
 #set -x  ## uncomment for MQTT logging...
@@ -40,7 +40,7 @@ LASTVAL="0"
 # Do this loop, so will restart if buffer runs out
 while true; do 
 
-  if [ -z ${MQTT_IDS+x} ] || [$MQTT_IDS = ""] || [$MQTT_IDS = "null"]; then 
+  if [ -z ${MQTT_IDS+x} ] || [$MQTT_IDS = ""] || [$MQTT_IDS = null]; then 
     ID_FILTER_OPTION=""
   else
     ID_FILTER_OPTION="-filterid=$MQTT_IDS"
