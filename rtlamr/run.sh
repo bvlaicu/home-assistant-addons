@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 export LANG=C
 PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin"
@@ -11,8 +11,8 @@ CONFIG_PATH=/data/options.json
 MQTT_HOST="$(jq --raw-output '.mqtt_host' $CONFIG_PATH)"
 MQTT_USER="$(jq --raw-output '.mqtt_user' $CONFIG_PATH)"
 MQTT_PASS="$(jq --raw-output '.mqtt_password' $CONFIG_PATH)"
-MQTT_MSGTYPE="$(jq --raw-output '.msg_type' $CONFIG_PATH)"
-MQTT_IDS="$(jq --raw-output '.meter_ids' $CONFIG_PATH)"
+MSG_TYPE="$(jq --raw-output '.msg_type' $CONFIG_PATH)"
+METER_IDS="$(jq --raw-output '.meter_ids // empty' $CONFIG_PATH)"
 
 
 # Start the listener and enter an endless loop
@@ -21,8 +21,8 @@ echo "MQTT Host =" $MQTT_HOST
 echo "MQTT User =" $MQTT_USER
 #MQTT_PASS_REDACTED=$(sed 's/^......./*******/' <<<$MQTT_PASS)
 #echo "MQTT Password =" $MQTT_PASS_REDACTED
-echo "Message Type =" $MQTT_MSGTYPE
-echo "Meter IDs =" $MQTT_IDS
+echo "Message Type =" $MSG_TYPE
+echo "Meter IDs =" $METER_IDS
 
 
 #set -x  ## uncomment for MQTT logging...
@@ -37,16 +37,16 @@ LASTVAL="0"
 
 #tail -f /dev/null
 
+
+if [ -z ${METER_IDS+x} ] || [${METER_IDS} = ""]; then 
+  ID_FILTER_OPTION=""
+else
+  ID_FILTER_OPTION="-filterid=$METER_IDS"
+fi
+
 # Do this loop, so will restart if buffer runs out
 while true; do 
-
-  if [[ -z ${MQTT_IDS+x} ] || [${MQTT_IDS} = ""] || [${MQTT_IDS} = "null"]]; then 
-    ID_FILTER_OPTION=""
-  else
-    ID_FILTER_OPTION="-filterid=$MQTT_IDS"
-  fi
-
-  /go/bin/rtlamr -format json -msgtype=$MQTT_MSGTYPE $ID_FILTER_OPTION | while read line
+  /go/bin/rtlamr -format json -msgtype=$MSG_TYPE $ID_FILTER_OPTION | while read line
 
   do
     VAL="$(echo $line | jq --raw-output '.Message.Consumption' | tr -s ' ' '_')" # replace ' ' with '_'
