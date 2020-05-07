@@ -40,7 +40,7 @@ LASTVAL="0"
 # Do this loop, so will restart if buffer runs out
 while true; do 
 
-  if [ -z ${MQTT_IDS+x} ] || [$MQTT_IDS = ""]; then 
+  if [ -z ${MQTT_IDS+x} ] || [$MQTT_IDS = ""] || [$MQTT_IDS = "null"]; then 
     ID_FILTER_OPTION=""
   else
     ID_FILTER_OPTION="-filterid=$MQTT_IDS"
