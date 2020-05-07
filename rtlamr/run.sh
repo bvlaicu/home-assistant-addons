@@ -11,7 +11,7 @@ CONFIG_PATH=/data/options.json
 MQTT_HOST="$(jq --raw-output '.mqtt_host' $CONFIG_PATH)"
 MQTT_USER="$(jq --raw-output '.mqtt_user' $CONFIG_PATH)"
 MQTT_PASS="$(jq --raw-output '.mqtt_password' $CONFIG_PATH)"
-MSG_TYPE="$(jq --raw-output '.msg_type' $CONFIG_PATH)"
+MSG_TYPE="$(jq --raw-output '.msg_type // empty' $CONFIG_PATH)"
 METER_IDS="$(jq --raw-output '.meter_ids // empty' $CONFIG_PATH)"
 
 
@@ -37,6 +37,9 @@ LASTVAL="0"
 
 #tail -f /dev/null
 
+if [ -z ${MSG_TYPE+x} ] || [${MSG_TYPE} = ""]; then 
+  MSG_TYPE="all"
+fi
 
 if [ -z ${METER_IDS+x} ] || [${METER_IDS} = ""]; then 
   ID_FILTER_OPTION=""

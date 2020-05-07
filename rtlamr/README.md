@@ -33,15 +33,15 @@ The `mqtt_password` option defines the password for the MQTT server
 
 ### Option: `msg_type`
 
-The `msg_type` option defines the comma-separated list of message types to receive all, scm, scm+, idm, netidm, r900 and r900bcd
+The `msg_type` option defines the comma-separated list of message types to be processed: all, scm, scm+, idm, netidm, r900 and r900bcd
 
-Default value: all
+If a value is not provided, all message types will be processed
 
 ### Option: `meter_ids`
 
 The `meter_ids` option defines the comma-separated list of meter ids to be processed
 
-If missing or empty, all found meters will be processed
+If a value is not provided, all found meters will be processed
 
 ## MQTT Data
 
