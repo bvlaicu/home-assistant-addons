@@ -53,6 +53,7 @@ while true; do
     VAL="$(echo $line | jq --raw-output '.Message.Consumption' | tr -s ' ' '_')" # replace ' ' with '_'
     METERID="$(echo $line | jq --raw-output '.Message.ID' | tr -s ' ' '_')"
     MSGTYPE="$(echo $line | jq --raw-output '.Type' | tr -s ' ' '_')"
+    MSG="$(echo $line | jq --raw-output '.Message' | tr -s ' ' '_')"
     MQTT_PATH="rtlamr/$METERID"
 
     # Create file with touch /var/log/rtl_433.log if logging is needed
@@ -61,6 +62,7 @@ while true; do
     # Publish to MQTTT
     echo $VAL | /usr/bin/mosquitto_pub -h $MQTT_HOST -u $MQTT_USER -P $MQTT_PASS -i RTL_433 -r -l -t $MQTT_PATH/reading
     echo $MSGTYPE | /usr/bin/mosquitto_pub -h $MQTT_HOST -u $MQTT_USER -P $MQTT_PASS -i RTL_433 -r -l -t $MQTT_PATH/type
+    echo $MSG | /usr/bin/mosquitto_pub -h $MQTT_HOST -u $MQTT_USER -P $MQTT_PASS -i RTL_433 -r -l -t $MQTT_PATH/message
     
   done
 
