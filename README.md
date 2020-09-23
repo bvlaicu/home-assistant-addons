@@ -18,10 +18,19 @@ https://github.com/bvlaicu/home-assistant-addons
 
 ## Add-ons provided by this repository
 
-### [PHP][addon-php]
-### [Dashcast][addon-dashcast]
-### [Meter Reader][addon-meter-reader]
 
+### [Dashcast][addon-dashcast]
+Display dashboard web pages on your Chromecast device
+### [Meter Reader][addon-meter-reader]
+Put a webcam in front of your utility meter and AWS Rekognition sends the reading over MQTT to a MQTT server of your choice
+### [MiniDLNA][addon-minidlna]
+MiniDLNA server serving web content from the /data persistent volume
+### [RTLAMR][addon-rtlamr]
+Listen for 433MHz RF transmissions of utility meterss and publish the data via MQTT
+### [Oru][addon-oru]
+Retrieving the last meter read from Orange and Rockland Utility or ConEdison and publish the data via MQTT
+### [PHP][addon-php]
+PHP server serving web content from the /data persistent volume
 
 ## Releases
 
@@ -72,7 +81,10 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-[addon-php]: https://github.com/bvlaicu/home-assistant-addons/tree/master/php
+
 [addon-dashcast]: https://github.com/bvlaicu/home-assistant-addons/tree/master/dashcast
 [addon-meter-reader]: https://github.com/bvlaicu/home-assistant-addons/tree/master/meter-reader
 [addon-minidlna]: https://github.com/bvlaicu/home-assistant-addons/tree/master/minidlna
+[addon-rtlamr]: https://github.com/bvlaicu/home-assistant-addons/tree/master/rtlamr
+[addon-oru]: https://github.com/bvlaicu/home-assistant-addons/tree/master/oru
+[addon-php]: https://github.com/bvlaicu/home-assistant-addons/tree/master/php
