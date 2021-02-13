@@ -48,7 +48,7 @@ def processor(base_low, baseline, base_up):
     found = (response['TextDetections'])
     reading = ""
     for item in found:
-        print("Tekst:", item['DetectedText'])
+        print("DetectedText:", item['DetectedText'])
         print("Type:", item['Type'])
         print("Confidence", item['Confidence'])
         print("Id", item['Id'])
@@ -64,15 +64,16 @@ def processor(base_low, baseline, base_up):
             try:
                 nw = int(temp)
             except Exception:
-                print("Conversion failed")
+                print("Conversion to int failed")
                 pass
-            print("Nw: ", nw)
+            print("Converted int: ", nw)
             if (base_low <= nw and nw <= base_up):
-                print("erg waarschijnlijk juist:")
+                print("Value found in range:")
                 reading = temp
                 print(temp)
                 print(base_low, nw, base_up)
         print("-----------")
+    print("Returning reading: ", reading)
     return reading
 
 

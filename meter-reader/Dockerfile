@@ -8,6 +8,8 @@ RUN apk add --no-cache curl
 RUN apk add --no-cache python3
 RUN apk add --no-cache nano
 
+RUN apk add cmd:pip3
+
 # install .py script dependency
 RUN pip3 install boto3
 RUN pip3 install requests
