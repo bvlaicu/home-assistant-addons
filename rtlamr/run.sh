@@ -27,6 +27,7 @@ echo "Meter IDs =" $METER_IDS
 
 #set -x  ## uncomment for MQTT logging...
 /usr/local/bin/rtl_tcp &>/dev/null &
+# /usr/local/bin/rtl_tcp > /var/log/rtl_tcp.log 2>&1 &
 
 # Sleep to fill buffer a bit
 sleep 15
@@ -50,10 +51,10 @@ while true; do
   /go/bin/rtlamr -format json -msgtype=$MSG_TYPE $ID_FILTER_OPTION | while read line
 
   do
-    VAL="$(echo $line | jq --raw-output '.Message.Consumption' | tr -s ' ' '_')" # replace ' ' with '_'
-    METERID="$(echo $line | jq --raw-output '.Message.ID' | tr -s ' ' '_')"
-    MSGTYPE="$(echo $line | jq --raw-output '.Type' | tr -s ' ' '_')"
-    MSG="$(echo $line | jq --raw-output '.Message' | tr -s ' ' '_')"
+    VAL="$(echo $line | jq --raw-output '.Message.Consumption')"
+    METERID="$(echo $line | jq --raw-output '.Message.ID')"
+    MSGTYPE="$(echo $line | jq --raw-output '.Type')"
+    MSG="$(echo $line | jq --raw-output '.Message')"
     MQTT_PATH="rtlamr/$METERID"
 
     # Create file with touch /var/log/rtl_433.log if logging is needed

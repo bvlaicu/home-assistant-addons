@@ -28,7 +28,7 @@ RUN apk add --no-cache --virtual build-deps alpine-sdk cmake git libusb-dev && \
     chmod +s /usr/local/bin/rtl_* && \
     apk del build-deps && \
     rm -r /tmp/src && \
-    apk add --no-cache libusb mosquitto-clients jq coreutils=8.31-r0 wget=1.20.3-r0 make musl-dev go git gcc
+    apk add --no-cache libusb mosquitto-clients jq coreutils=8.32-r2 wget=1.21.1-r1 make musl-dev go git gcc
 	
 # Configure Go
 ENV GOROOT /usr/lib/go
