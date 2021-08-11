@@ -71,3 +71,29 @@ The addon will publish the latest meter read value and unit of measure to the fo
 `electric_meter/value`
 
 `electric_meter/uom`
+
+## Home Assistant Energy
+
+To enable tracking of your power usage with the new (as of 08/2021) Home Assistant Energy panel, you must add the following to your `configuration.yaml`:
+
+```yaml
+
+homeassistant:
+  ...
+  customize_glob:
+    sensor.*_energy:
+      last_reset: '1970-01-01T00:00:00+00:00'
+      device_class: energy
+      state_class: measurement
+
+sensor:
+  ...
+  - platform: mqtt
+    name: "ConEd Energy Usage"
+    unique_id: "coned_energy"
+    state_topic: "electric_meter/value"
+    unit_of_measurement: 'kWh'
+    device_class: energy
+    state_class: measurement
+
+```
