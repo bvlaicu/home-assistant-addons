@@ -37,7 +37,14 @@ For MFA type TOTP, choose Google Authenticator, choose a device type and when pr
 
 ### Option: `account_uuid`
 
-The Orange and Rockland Utility account uuid. To find it log into oru.com / coned.com then use the browser developer tools to search for `uuid` in the network tab. 
+The Orange and Rockland Utility account uuid. To find it log into oru.com / coned.com then use the browser developer tools to search for `uuid` in the network tab.
+
+For oru.com, login to your account and go to
+-> Home Page
+-> Billing and Usage
+-> Your Billing and Usage
+-> Real Time usage
+-> in browser developer tools, search for URL like : https://oru.opower.com/ei/edge/apis/cws-real-time-ami-v1/cws/oru/accounts/<YOUR_ACCOUNT_UUID>/meters/<YOUR_METER_NUMBER>/usage
 
 ### Option: `meter_number`
 
