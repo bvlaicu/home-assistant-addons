@@ -44,7 +44,7 @@ Login to your account and go to
 -> Billing and Usage
 -> Your Billing and Usage
 -> Real Time usage
--> In browser developer tools, search for URL like : https://oru.opower.com/ei/edge/apis/cws-real-time-ami-v1/cws/oru/accounts/<YOUR_ACCOUNT_UUID>/meters/<YOUR_METER_NUMBER>/usage
+-> In browser developer tools, search for URL like : ```https://oru.opower.com/ei/edge/apis/cws-real-time-ami-v1/cws/oru/accounts/<YOUR_ACCOUNT_UUID>/meters/<YOUR_METER_NUMBER>/usage```
 
 Copy your UUID from the URl and paste it in this config
 
