@@ -81,19 +81,39 @@ To enable tracking of your power usage with the new (as of 08/2021) Home Assista
 homeassistant:
   ...
   customize_glob:
-    sensor.*_energy:
-      last_reset: '1970-01-01T00:00:00+00:00'
+    sensor.oru_energy_total_kwh:
+      last_reset: "1970-01-01T00:00:00+00:00"
       device_class: energy
       state_class: measurement
+      unit_of_measurement: "kWh"
 
 sensor:
   ...
   - platform: mqtt
-    name: "ConEd Energy Usage"
-    unique_id: "coned_energy"
+    name: "Oru Energy Usage"
+    unique_id: "oru_energy"
     state_topic: "electric_meter/value"
-    unit_of_measurement: 'kWh'
+    unit_of_measurement: "kWh"
     device_class: energy
     state_class: measurement
+  - platform: statistics
+    name: oru_energy_usage_stats
+    entity_id: sensor.oru_energy_usage
+  - platform: template
+    sensors:
+      oru_energy_total_kwh:
+        friendly_name: Total ORU Energy
+        device_class: energy
+        value_template: "{{ state_attr('sensor.oru_energy_usage_stats', 'total') }}"
+        unit_of_measurement: 'kWh'
 
 ```
+
+*** Home Assistant Energy Monitoring Feature ***
+To integrate the above setup with the new Home Assistant Energy Momitoring feature. simply add "Total ORU Energy" entity in the Energy Configuration page of your Home Assistant
+
+<img width="1024" alt="Screen Shot 2021-08-24 at 4 40 01 PM" src="https://user-images.githubusercontent.com/15055127/130686826-7d94df43-dfe5-473b-adc2-1364cfb2ee25.png">
+
+Wait for atleast 2-3 hours for the dashboard to populate, and it should look something like this:
+
+<img width="1657" alt="Screen Shot 2021-08-24 at 4 24 37 PM" src="https://user-images.githubusercontent.com/15055127/130686905-b5597466-a945-4b98-b10d-7de56fc55885.png">
