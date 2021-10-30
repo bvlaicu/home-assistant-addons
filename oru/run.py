@@ -13,7 +13,7 @@ meter = Meter(
     account_uuid=os.getenv("ACCOUNT_UUID"),
     meter_number=os.getenv("METER_NUMBER"),
     site=os.getenv("SITE"),
-    browser_path="/usr/bin/google-chrome-stable"
+    browser_path="/usr/bin/chromium-browser"
 )
 startTime, endTime, value, uom = asyncio.get_event_loop().run_until_complete(meter.last_read())
 

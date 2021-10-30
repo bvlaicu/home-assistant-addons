@@ -37,7 +37,16 @@ For MFA type TOTP, choose Google Authenticator, choose a device type and when pr
 
 ### Option: `account_uuid`
 
-The Orange and Rockland Utility account uuid. To find it log into oru.com / coned.com then use the browser developer tools to search for `uuid` in the network tab. 
+The Orange and Rockland Utility account uuid. To find it log into oru.com then use the browser developer tools & follow the steps below;
+
+Login to your account and go to
+-> Home Page
+-> Billing and Usage
+-> Your Billing and Usage
+-> Real Time usage
+-> In browser developer tools, search for URL like : ```https://oru.opower.com/ei/edge/apis/cws-real-time-ami-v1/cws/oru/accounts/<YOUR_ACCOUNT_UUID>/meters/<YOUR_METER_NUMBER>/usage```
+
+Copy your UUID from the URl and paste it in this config
 
 ### Option: `meter_number`
 
@@ -71,3 +80,29 @@ The addon will publish the latest meter read value and unit of measure to the fo
 `electric_meter/value`
 
 `electric_meter/uom`
+
+## Home Assistant Energy
+
+To enable tracking of your power usage with the new (as of 08/2021) Home Assistant Energy panel, you must add the following to your `configuration.yaml`:
+
+```yaml
+
+homeassistant:
+  ...
+  customize_glob:
+    sensor.*_energy:
+      last_reset: '1970-01-01T00:00:00+00:00'
+      device_class: energy
+      state_class: measurement
+
+sensor:
+  ...
+  - platform: mqtt
+    name: "ConEd Energy Usage"
+    unique_id: "coned_energy"
+    state_topic: "electric_meter/value"
+    unit_of_measurement: 'kWh'
+    device_class: energy
+    state_class: measurement
+
+```
