@@ -204,7 +204,7 @@ class DashboardLauncher():
             pass
 
 
-casts = pychromecast.get_chromecasts()
+casts, browser = pychromecast.get_chromecasts()
 if len(casts) == 0:
     print('No Devices Found')
     exit()
