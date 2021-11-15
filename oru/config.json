@@ -9,7 +9,6 @@
   "homeassistant": "0.92.0b2",
   "boot": "auto",
   "map": ["share:rw", "ssl"],
-  "devices": ["/dev/bus/usb:/dev/bus/usb:rwm"],
   "host_network": "False",
   "arch": [
     "aarch64",
