@@ -1,6 +1,6 @@
 {
   "name": "Orange and Rockland Utility to MQTT Bridge",
-  "version": "0.2.57",
+  "version": "0.2.58",
   "slug": "oru",
   "description": "Orange and Rockland Utility meter reading to MQTT",
   "url": "https://github.com/bvlaicu/home-assistant-addons/tree/master/oru",
@@ -28,6 +28,7 @@
     "mfa_secret": "",
     "account_uuid": "",
     "meter_number": "",
+    "account_number": "",
     "site": "",
     "mqtt_host": "hassio.local",
     "mqtt_user": "",
@@ -41,6 +42,7 @@
     "mfa_secret": "str",
     "account_uuid": "str",
     "meter_number": "str",
+    "account_number": "str",
     "site": "str",
     "mqtt_host": "str",
     "mqtt_user": "str",
