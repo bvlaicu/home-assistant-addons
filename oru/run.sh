@@ -13,6 +13,7 @@ export MQTT_HOST="$(jq --raw-output '.mqtt_host' $CONFIG_PATH)"
 export MQTT_USER="$(jq --raw-output '.mqtt_user' $CONFIG_PATH)"
 export MQTT_PASS="$(jq --raw-output '.mqtt_password' $CONFIG_PATH)"
 
+echo ""
 echo "Params:"
 echo "EMAIL =" $EMAIL
 echo "PASSWORD =" $(sed 's/^........../**********/' <<<$PASSWORD)
@@ -25,11 +26,21 @@ echo "MQTT_HOST =" $MQTT_HOST
 echo "MQTT_USER =" $MQTT_USER
 echo "MQTT_PASS =" $(sed 's/^........../**********/' <<<$MQTT_PASS)
 
+echo ""
+echo "Packages list:"
+pip3 list
+
 # Start the listener and enter an endless loop
+echo ""
 echo "Starting endless loop.."
+echo ""
+
 while true; do 
   python3 run.py
   #tail -f /dev/null
 
+  echo ""
+  echo "Sleeping 5 mins.."
   sleep 300
+  echo ""
 done
