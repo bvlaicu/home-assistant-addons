@@ -95,9 +95,8 @@ homeassistant:
       device_class: energy
       state_class: measurement
 
-sensor:
-  ...
-  - platform: mqtt
+mqtt:
+  sensor:
     name: "ConEd Energy Usage"
     unique_id: "coned_energy"
     state_topic: "electric_meter/value"
