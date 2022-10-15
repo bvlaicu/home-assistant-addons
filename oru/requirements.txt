@@ -2,4 +2,4 @@ pyotp
 requests
 pyppeteer
 paho-mqtt
-coned
+coned == 0.3.0
