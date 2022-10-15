@@ -6,6 +6,7 @@ import paho.mqtt.client as mqtt
 import json
 import logging
 import time
+from datetime import datetime
 
 print(f"Creating Meter")
 
@@ -24,8 +25,8 @@ meter = Meter(
 
 print(f"Calling meter.last_read()..")
 startTime, endTime, value, uom = asyncio.get_event_loop().run_until_complete(meter.last_read())
-
-message = {'startTime': startTime, 'endTime': endTime, 'value': value, 'uom': uom}
+asOf = datetime.now().isoformat()
+message = {'startTime': startTime, 'endTime': endTime, 'value': value, 'uom': uom, 'asOf': asOf}
 
 print(f"message: {message}")
 
