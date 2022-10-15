@@ -13,6 +13,7 @@ mfa_type: TOTP
 mfa_secret: '!secret oru_mfa_secret'
 account_uuid: ef788d65-5380-11e8-8211-2655115779ac
 meter_number: 706438804
+account_number: 004352784609234
 site: oru
 mqtt_host: hassio.local
 mqtt_user: mqtt
@@ -51,6 +52,10 @@ Copy your UUID from the URl and paste it in this config
 ### Option: `meter_number`
 
 The Orange and Rockland Utility meter number. You can find it on a utility bill.
+
+### Option: `account_number`
+
+Optional – use only if you have more than one service address associated with your account. You can find it in the URL after logging in and navigating to the account, ex. `https://www.coned.com/en/accounts-billing/dashboard?account=004352784609234`
 
 ### Option: `site`
 
