@@ -42,7 +42,7 @@
     "mfa_secret": "str",
     "account_uuid": "str",
     "meter_number": "str",
-    "account_number": "str",
+    "account_number": "str?",
     "site": "str",
     "mqtt_host": "str",
     "mqtt_user": "str",
