@@ -1,6 +1,6 @@
 {
   "name": "Orange and Rockland Utility to MQTT Bridge",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "slug": "oru",
   "description": "Orange and Rockland Utility meter reading to MQTT",
   "url": "https://github.com/bvlaicu/home-assistant-addons/tree/master/oru",
